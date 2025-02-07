@@ -1,16 +1,12 @@
 package sortings
 
-import (
-	"fmt"
-)
-
 func MergeSort(arr []int) []int {
 	if len(arr) <= 1 {
-		return arr 
+		return arr
 	}
 	mid := len(arr) / 2
 	l := MergeSort(arr[:mid])
-	l := MergeSort(arr[mid:])
+	r := MergeSort(arr[mid:])
 
 	return merge(l, r)
 }
@@ -33,9 +29,3 @@ func merge(l, r []int) []int {
 	result = append(result, r[j:]...)
 	return result
 }
-
-func main() {
-	arr := []int{38, 27, 43, 3, 9, 82, 10}
-	sortedArr := MergeSort(arr)
-
-	fmt.Println("Sorted Array:", sortedArr)
