@@ -1,4 +1,4 @@
-package sortings
+package helper
 
 func BinarySearch(arr []int, target int) int {
 

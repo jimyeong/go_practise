@@ -1,4 +1,4 @@
-package sortings
+package helper
 
 func MergeSort(arr []int) []int {
 	if len(arr) <= 1 {
@@ -13,8 +13,8 @@ func MergeSort(arr []int) []int {
 
 func merge(l, r []int) []int {
 	result := make([]int, 0, len(l)+len(r))
+	// k:=make([]int, 0, len(l) + len(r))
 	i, j := 0, 0
-
 	// Merge elements in sorted order
 	for i < len(l) && j < len(r) {
 		if l[i] < r[j] {
@@ -26,6 +26,7 @@ func merge(l, r []int) []int {
 		}
 	}
 	result = append(result, l[i:]...)
+	// result = append(result, l[i:]... )
 	result = append(result, r[j:]...)
 	return result
 }
